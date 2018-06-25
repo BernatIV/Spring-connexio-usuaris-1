@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.demo.exception.UsuariNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,18 +37,12 @@ public class StudentController {
 
 	@GetMapping("/students/{id}")
 	public Student retrieveStudent(@PathVariable long id) {
-		//Optional<Student> student = studentRepository.findById(id);
 		Optional<Student> student = studentRepository.findById(id);
-		Student result = null;
-		if(student.isPresent()) {
-			result = student.get();
-		}
 		
 		if (!student.isPresent()) {
 			throw new StudentNotFoundException("id-" + id);
-			//return student.get();
 		}
-		return result;
+		return student.get();
 	}
 	
 	@DeleteMapping("/students/{id}")

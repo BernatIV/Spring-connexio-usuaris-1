@@ -9,3 +9,6 @@ values(10003,'Pepe', 'A1234568');
 
 insert into usuari
 values(10005, 'Monel', 'ADFA234234');
+
+insert into usuari
+values(10006, 'Sogues', 'ASDF23442');
