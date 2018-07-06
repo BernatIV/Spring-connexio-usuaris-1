@@ -12,3 +12,10 @@ values(10005, 'Monel', 'ADFA234234');
 
 insert into usuari
 values(10006, 'Sogues', 'ASDF23442');
+
+
+
+-- En tots els projectes menys aquest m'ha petat.
+-- Segons el projecte "age-of-empires" em petava perquè el salt de línia l'interpretava com un ';'
+
+-- El nom d'aquest fitxer també hauria de ser 'import.sql', i no 'data.sql'.
